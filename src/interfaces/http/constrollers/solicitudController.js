@@ -1,6 +1,6 @@
 import crearSolicitud from '../../../domain/usecases/crearSolicitud.js'
 
- export const crearSolicitudController = (req, res) => {
+ export const crearSolicitudController = async (req, res) => {
   try {
     const { usuarioId, monto } = req.body
 

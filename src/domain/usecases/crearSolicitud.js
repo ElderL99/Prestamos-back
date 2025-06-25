@@ -1,8 +1,10 @@
 import Solicitud from '../entities/Solicitud.js'
+import { guardarSolicitud } from '../../infra/db/repositories/guardarSolicitud.js'
 
-export default function crearSolicitud({ usuarioId, monto }) {
+export default async function crearSolicitud({ usuarioId, monto }) {
   const solicitud = new Solicitud({ usuarioId, monto })
   solicitud.cambiarEstado('borrador')
 
-  return solicitud
+  const guardada = await guardarSolicitud(solicitud)
+  return guardada
 }

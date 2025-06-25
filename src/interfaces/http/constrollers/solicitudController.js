@@ -1,6 +1,6 @@
-import { crearSolicitud } from '@domain/usecases/crearSolicitud.js'
+import crearSolicitud from '../../../domain/usecases/crearSolicitud.js'
 
-const crearSolicitudController = (req, res) => {
+ export const crearSolicitudController = (req, res) => {
   try {
     const { usuarioId, monto } = req.body
 
@@ -16,6 +16,5 @@ const crearSolicitudController = (req, res) => {
   }
 }
 
-module.exports = {
-  crearSolicitudController,
-}
+
+console.log('Solicitud Controller cargado correctamente')

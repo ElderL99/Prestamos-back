@@ -1,9 +1,8 @@
-import Solicitud from "../entities/Solicitud.js"
+import Solicitud from '../entities/Solicitud.js'
 
-function crearSolicitud({ usuarioId, monto }) {
+export default function crearSolicitud({ usuarioId, monto }) {
   const solicitud = new Solicitud({ usuarioId, monto })
-  solicitud.cambiarEstado('borrador') 
+  solicitud.cambiarEstado('borrador')
+
   return solicitud
 }
-
-export default crearSolicitud

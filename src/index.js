@@ -9,18 +9,23 @@ dotenv.config()
 const app = express()
 const PORT = process.env.PORT || 4000
 
+// Middlewares
 app.use(cors())
 app.use(express.json())
 
-await connectDB() 
+// Conexión a la base de datos
+await connectDB()
 
-app.get('/', (req, res) => {
-  res.send('Hola desde el servidor')
-})
-
+// Rutas
 app.use('/solicitudes', solicitudRoutes)
 
+// Ruta raíz opcional
+app.get('/', (req, res) => {
+  res.send('Servidor de préstamos funcionando')
+})
+
+// Inicio del servidor
 app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`)
-  console.log(`Visita http://localhost:${PORT}`)
+  console.log(`✅ Servidor corriendo en el puerto ${PORT}`)
+  console.log(`🌐 http://localhost:${PORT}`)
 })

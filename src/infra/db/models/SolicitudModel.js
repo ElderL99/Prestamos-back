@@ -9,7 +9,7 @@ const solicitudSchema = new mongoose.Schema({
   usuarioId: { type: String, required: true },
   monto: { type: Number, required: true },
   estado: { type: String, required: true, default: 'borrador' },
-  documentos: [{ url: String, fechaSubida: Date,}], // rutas o nombres de archivo
+  documentos: [{ url: String, fechaSubida: Date, tipo: String}], // rutas o nombres de archivo
   historialEstados: [historialSchema],
   fechaCreacion: { type: Date, default: Date.now }
 })

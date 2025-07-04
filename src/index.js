@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import solicitudRoutes from './interfaces/http/routes/solicitudRoutes.js'
 import { connectDB } from './infra/db/mongoClient.js'
+import adminRoutes from './interfaces/http/routes/adminRoutes.js'
 
 dotenv.config()
 
@@ -18,6 +19,7 @@ await connectDB()
 
 // Rutas
 app.use('/solicitudes', solicitudRoutes)
+app.use('/admin', adminRoutes)
 
 // Ruta raíz opcional
 app.get('/', (req, res) => {
